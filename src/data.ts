@@ -16,40 +16,40 @@ export const CATEGORIES = [
 
 export const CATEGORY_COLORS: Record<string, { bg: string; text: string; border: string; accent: string }> = {
   "Smart Governance": {
-    bg: "bg-blue-50/80",
-    text: "text-blue-700",
-    border: "border-blue-200",
-    accent: "bg-blue-600",
+    bg: "bg-cyan-950/20",
+    text: "text-cyan-400",
+    border: "border-cyan-500/30",
+    accent: "bg-cyan-500",
   },
   "Smart Mobility": {
-    bg: "bg-or-orange-50/80 hover:bg-orange-50", // Custom
-    text: "text-amber-700",
-    border: "border-amber-200",
+    bg: "bg-amber-950/20",
+    text: "text-amber-400",
+    border: "border-amber-500/30",
     accent: "bg-amber-500",
   },
   "Smart Environment": {
-    bg: "bg-emerald-50/80",
-    text: "text-emerald-700",
-    border: "border-emerald-200",
-    accent: "bg-emerald-600",
+    bg: "bg-emerald-950/20",
+    text: "text-emerald-400",
+    border: "border-emerald-500/30",
+    accent: "bg-emerald-500",
   },
   "Smart Economy": {
-    bg: "bg-indigo-50/80",
-    text: "text-indigo-700",
-    border: "border-indigo-200",
-    accent: "bg-indigo-600",
+    bg: "bg-purple-950/20",
+    text: "text-purple-400",
+    border: "border-purple-500/30",
+    accent: "bg-purple-500",
   },
   "Smart Living": {
-    bg: "bg-rose-50/80",
-    text: "text-rose-700",
-    border: "border-rose-200",
-    accent: "bg-rose-600",
+    bg: "bg-red-950/20",
+    text: "text-red-400",
+    border: "border-red-500/30",
+    accent: "bg-red-500",
   },
   "Smart People": {
-    bg: "bg-violet-50/80",
-    text: "text-violet-700",
-    border: "border-violet-200",
-    accent: "bg-violet-600",
+    bg: "bg-pink-950/20",
+    text: "text-pink-400",
+    border: "border-pink-500/30",
+    accent: "bg-pink-500",
   },
 };
 

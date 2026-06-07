@@ -1,59 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Rajdhani", sans-serif;
+}
+
 @layer utilities {
+  /* Tactical Cyber Glass Card */
   .card-glass {
-    background: rgba(15, 23, 42, 0.45);
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(51, 65, 85, 0.5);
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, rgba(8, 10, 20, 0.9) 0%, rgba(13, 17, 34, 0.85) 100%);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(239, 68, 68, 0.2); /* Crimson cyber orange border */
+    box-shadow: 
+      0 0 20px rgba(0, 0, 0, 0.8),
+      inset 0 0 10px rgba(239, 68, 68, 0.05);
+    position: relative;
+    clip-path: polygon(
+      0px 0px, 
+      calc(100% - 12px) 0px, 
+      100% 12px, 
+      100% 100%, 
+      12px 100%, 
+      0px calc(100% - 12px)
+    );
   }
-  
+
   .card-glass-hover {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .card-glass-hover:hover {
-    background: rgba(30, 41, 59, 0.6);
-    border-color: rgba(56, 189, 248, 0.4);
-    box-shadow: 0 15px 35px -5px rgba(56, 189, 248, 0.1), 0 0 20px rgba(0, 0, 0, 0.8);
+    border-color: rgba(245, 158, 11, 0.6); /* Amber hover border */
+    box-shadow: 
+      0 0 30px rgba(245, 158, 11, 0.15), 
+      inset 0 0 15px rgba(245, 158, 11, 0.08);
     transform: translateY(-2px);
   }
 
-  .accent-text {
-    text-shadow: 0 0 30px rgba(56, 189, 248, 0.45);
+  /* Core Neon Glow Text Shadows for "Garang" UI */
+  .accent-glow-orange {
+    text-shadow: 
+      0 0 10px rgba(245, 158, 11, 0.5),
+      0 0 30px rgba(245, 158, 11, 0.2);
+  }
+
+  .accent-glow-red {
+    text-shadow: 
+      0 0 10px rgba(239, 68, 68, 0.6),
+      0 0 25px rgba(239, 68, 68, 0.3);
+  }
+
+  .accent-glow-cyan {
+    text-shadow: 
+      0 0 10px rgba(6, 182, 212, 0.6),
+      0 0 25px rgba(6, 182, 212, 0.3);
+  }
+
+  /* Scanline Overlay to give terminal aura */
+  .hud-scanlines {
+    background: linear-gradient(
+      rgba(18, 16, 16, 0) 50%, 
+      rgba(0, 0, 0, 0.25) 50%
+    ), linear-gradient(
+      90deg, 
+      rgba(255, 0, 0, 0.03), 
+      rgba(0, 255, 0, 0.01), 
+      rgba(0, 0, 255, 0.03)
+    );
+    background-size: 100% 4px, 6px 100%;
+  }
+
+  /* Tactical crosshair patterns inside panels */
+  .hud-grid-pattern {
+    background-size: 30px 30px;
+    background-image: 
+      linear-gradient(to right, rgba(239, 68, 68, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(239, 68, 68, 0.04) 1px, transparent 1px);
   }
 }
 
-/* Custom scrollbars for bento containers */
+/* Custom Tactical Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.1);
+  background: rgba(3, 7, 18, 0.8);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(51, 65, 85, 0.5);
-  border-radius: 9999px;
+  background: rgba(239, 68, 68, 0.4);
+  border-radius: 0px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(56, 189, 248, 0.5);
+  background: rgba(245, 158, 11, 0.8);
 }
 
-@keyframes pulse-ring {
+/* Severe pulse animations */
+@keyframes reactor-pulse {
   0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5);
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.5);
   }
-  70% {
+  50% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(56, 189, 248, 0);
+    box-shadow: 0 0 15px 4px rgba(239, 68, 68, 0.3);
   }
   100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    transform: scale(0.96);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
   }
 }
 
-.pulsing-ring {
-  animation: pulse-ring 2s infinite;
+.reactor-pulse {
+  animation: reactor-pulse 3s infinite ease-in-out;
+}
+
+@keyframes scanner-bar {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.radar-scanner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(239, 68, 68, 0.8), transparent);
+  animation: scanner-bar 12s infinite linear;
+  pointer-events: none;
+  z-index: 50;
 }
