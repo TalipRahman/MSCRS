@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Malaysia Smart City 2",
+  "description": "Sistem Pengiktirafan Bandar Pintar Malaysia. Interactive dashboard for assessing cities across key smart dimensions, managing urban projects, and generating server-side AI strategic recommendations under the Malaysian Smart City Framework.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
